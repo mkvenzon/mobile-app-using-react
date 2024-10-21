@@ -48,6 +48,8 @@ const App = (): ReactElement => {
   useEffect(() => {
     fetchGames().then((data) => setGames(data));
     fetchProvider().then((data) => setProviders(data))
+
+    alert("Welcome to the app. For the best experience, please view this in mobile mode by switching to mobile view in your browser's developer tools.");
   }, [])
 
   return (
