@@ -6,6 +6,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 
+import SearchInput from "./SearchInput"
+
 import Search from "../assets/search-icon.png";
 import Start from "../assets/start-icon.png";
 import New from "../assets/new-icon.png";
@@ -35,7 +37,7 @@ const TabPanel = ({
 
 const TabMenu = (): ReactElement => {
   const tabs = [
-    { label: "SEARCH", icon: <img src={Search} />, content: <h1>SEARCH</h1> },
+    { label: "SEARCH", icon: <img src={Search} />, content: <h1><SearchInput /></h1> },
     { label: "START", icon: <img src={Start} />, content: <h1>START</h1> },
     { label: "NEW", icon: <img src={New} />, content: <h1>NEW</h1> },
     { label: "SLOTS", icon: <img src={Slots} />, content: <h1>SLOTS</h1> },
