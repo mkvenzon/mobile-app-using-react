@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import { Paper, Typography } from '@mui/material';
+import { Paper } from '@mui/material';
 
 import Img1 from "../assets/Banner.png"
 
@@ -14,12 +14,20 @@ interface CarouselItemProps {
 
 const CarouselItem: React.FC<CarouselItemProps> = ({ item }) => {
   return (
-    <Paper 
-      style={{ padding: '5px', backgroundImage: `url(${item.img})`, backgroundSize: 'cover', height: '250px'}}
-    >        
-      <Typography variant="h4" style={{ color: 'white' }}>
-        {item.name}
-      </Typography>   
+      <Paper           
+          style={{
+              padding: '50px',            
+              backgroundSize: 'cover',
+              display: 'flex',              
+          }}
+      > 
+          <img src={item.img}
+          style={{
+          width: '100%',
+          maxHeight: '300px', 
+          objectFit: 'cover', 
+          borderRadius: '5px',        
+        }} ></img>  
     </Paper>
   );
 };
