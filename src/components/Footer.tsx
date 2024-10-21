@@ -29,6 +29,9 @@ const Footer = (): ReactElement => {
 
   return (
     <Box
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
       sx={{
         position: "fixed",  
         bottom: 0,

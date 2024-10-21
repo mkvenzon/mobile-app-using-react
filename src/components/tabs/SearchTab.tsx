@@ -4,6 +4,8 @@ import { TextField,  InputAdornment, ImageList, ImageListItem } from '@mui/mater
 import searchicon from '../../assets/search-icon.png'
 import { Game } from '../../mocks/fetchGames';
 
+import provider from '../../assets/provider-icon.png'
+
 interface SearchTabProps {
   games: Game[]
 }
@@ -41,6 +43,7 @@ const SearchTab = (props:SearchTabProps) : ReactElement => {
           ),
         }}     
       />     
+      <img src={provider } />
         <ImageList cols={3} gap={10} style={{ width: '100%', margin: 'auto' }}>
           {filteredItems.map((game) => (
           <ImageListItem key={game.id}>
