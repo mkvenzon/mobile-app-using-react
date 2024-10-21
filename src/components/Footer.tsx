@@ -6,19 +6,15 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 
-import SearchTab from "./tabs/SearchTab"
+import StartTab from "./tabs/Start";
 
-import Search from "../assets/search-icon.png";
-import Start from "../assets/start-icon.png";
-import New from "../assets/new-icon.png";
-import Slots from "../assets/slots-icon.png";
-import Live from "../assets/live-icon.png";
-import Jackpot from "../assets/jackpot-icon.png";
-import Table from "../assets/table-icon.png";
-import Bingo from "../assets/bingo-icon.png";
-import Others from "../assets/others-icon.png";
+import Sport from "../assets/sports-icon.png";
+import Favorites from "../assets/favorite-icon.png";
+import Invite from "../assets/invite-icon.png";
+import Casino from "../assets/casino-icon.png";
+import Cashier from "../assets/cashier-icon.png";
 
-import StartTab from './tabs/Start'
+
 
 interface TabMenuProps {
   games: Game[]
@@ -42,25 +38,13 @@ const TabPanel = ({
   );
 };
 
-const TabMenu = (props: TabMenuProps): ReactElement => {
+const Footer = (props: TabMenuProps): ReactElement => {
   const tabs = [
-    { label: "SEARCH", icon: <img src={Search} />, content: <SearchTab games={props.games} /> },
-    { label: "START", icon: <img src={Start} />, content: <StartTab games={props.games} setGames={props.setGames} /> },
-    { label: "NEW", icon: <img src={New} />, content: <h1>NEW</h1> },
-    { label: "SLOTS", icon: <img src={Slots} />, content: <h1>SLOTS</h1> },
-    { label: "LIVE", icon: <img src={Live} />, content: <h1>LIVE</h1> },
-    {
-      label: "JACKPOT",
-      icon: <img src={Jackpot} />,
-      content: <h1>JACKPOT</h1>,
-    },
-    {
-      label: "TABLE GAMES",
-      icon: <img src={Table} />,
-      content: <h1>TABLE GAMES</h1>,
-    },
-    { label: "BINGO", icon: <img src={Bingo} />, content: <h1>BINGO</h1> },
-    { label: "OTHERS", icon: <img src={Others} />, content: <h1>OTHERS</h1> },
+    { label: "SPORTS", icon: <img src={Sport} />, content: <h1>SPORTS</h1> },
+    { label: "FAVORITES", icon: <img src={Favorites} />, content: <StartTab games={props.games} setGames={props.setGames}  /> },
+    { label: "INVITE", icon: <img src={Invite} />, content: <h1>INVITE</h1> },
+    { label: "CASINO LIVE", icon: <img src={Casino} />, content: <h1>CASINO LIVE</h1> },
+    { label: "CASHIER", icon: <img src={Cashier} />, content: <h1>CASHIER</h1> },
   ];
   const [value, setValue] = useState(1);
 
@@ -98,4 +82,4 @@ const TabMenu = (props: TabMenuProps): ReactElement => {
   );
 };
 
-export default TabMenu;
+export default Footer;

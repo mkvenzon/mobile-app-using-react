@@ -1,5 +1,7 @@
 import { type ReactElement, useState } from 'react';
-import { TextField, Card, CardMedia, Paper, InputAdornment, ListItem} from '@mui/material';
+import { TextField,  InputAdornment, ImageList, ImageListItem } from '@mui/material';
+
+
 
 
 
@@ -29,7 +31,7 @@ const SearchTab = (props:SearchTabProps) : ReactElement => {
 
 
   return (
-    <Paper elevation={3} style={{ padding: '20px' }}>     
+   <>
       <TextField                
         variant="outlined"
         value={searchItem}
@@ -47,25 +49,15 @@ const SearchTab = (props:SearchTabProps) : ReactElement => {
             </InputAdornment>
           ),
         }}     
-      />
-
-      
-      
-        {filteredItems.map((game) => (
-          <ListItem key={game.id}>
-            <Card>             
-              <CardMedia
-                component="img"
-                height="140"
-                image={game.image}
-                alt={game.title}
-                style={{ objectFit: 'cover' }}
-              />          
-            </Card>
-          </ListItem >
+      />     
+        <ImageList cols={3} gap={10} style={{ width: '100%', margin: 'auto' }}>
+          {filteredItems.map((game) => (
+          <ImageListItem key={game.id}>
+            <img src={game.image} alt={game.title} loading="lazy" style={{ width: '100%', height: 'auto' }} />
+          </ImageListItem>
         ))}
-      
-    </Paper>
+      </ImageList>
+      </>
   );
 };
 
