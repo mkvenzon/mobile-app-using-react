@@ -1,13 +1,14 @@
-import Card from './components/Card'
+import type { ReactElement } from "react";
+import NavBar from "./components/NavBar";
+import TabMenu from "./components/TabMenu";
 
-
-function App() {
-
+const App = (): ReactElement => {
   return (
     <>
-      <Card />      
-    </> 
-  )
-}
+      <NavBar />
+      <TabMenu />
+    </>
+  );
+};
 
-export default App
+export default App;
