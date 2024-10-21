@@ -43,7 +43,7 @@ const TabPanel = ({
 
 const TabMenu = (props: TabMenuProps): ReactElement => {
   const tabs = [
-    { label: "SEARCH", icon: <img src={Search} />, content: <SearchTab /> },
+    { label: "SEARCH", icon: <img src={Search} />, content: <SearchTab games={props.games} /> },
     { label: "START", icon: <img src={Start} />, content: <StartTab games={props.games} /> },
     { label: "NEW", icon: <img src={New} />, content: <h1>NEW</h1> },
     { label: "SLOTS", icon: <img src={Slots} />, content: <h1>SLOTS</h1> },

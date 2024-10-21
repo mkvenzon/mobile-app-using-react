@@ -1,63 +1,38 @@
-import React, { useState } from 'react';
-import { TextField, Card, CardMedia, Paper, InputAdornment} from '@mui/material';
-import Grid from '@mui/material/Grid';
+import { type ReactElement, useState } from 'react';
+import { TextField, Card, CardMedia, Paper, InputAdornment, ListItem} from '@mui/material';
+
+
 
 import searchicon from '../../assets/search-icon.png'
+import { Game } from '../../mocks/fetchGames';
 
-
-import sugar from '../../assets/sugar-rush-icon.png'
-import shaolin from '../../assets/shaolin-crew-icon.png'
-import bigbad from '../../assets/big-wolf-icon.png'
-
-
-interface Item {
-  
-  name: string;
-  img: string;
-  
+interface SearchTabProps {
+  games: Game[]
 }
 
-const items: Item[] = [
-  { name: 'Sugar Rush', img: sugar  },
-  { name: 'Shaolin Crew', img: shaolin },
-  { name: 'Big Bad Wolf', img:bigbad  },
-  // { name: 'Book of Egypt' },
-  // { name: 'Pirates Power' },
-  // { name: 'Crocodile Blitz Extreme FB'},
-  // { name: 'Anaconda Wild 2 Powerplay Jackpot'},
-  // { name: 'Maya Jackpot' },
-  // { name: 'Beach Life'},
-  // { name: 'Inca Jackpot'},
-  // { name: 'Pride of Persia' },
-  // { name: 'Azteca'},
-];
 
-const SearchComponent: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState<string>(''); // State to hold the search term
-  const [filteredItems, setFilteredItems] = useState<Item[]>(items); // State for filtered items
+const SearchTab = (props:SearchTabProps) : ReactElement => {
+  const [searchItem, setSearchItem] = useState<string>(''); 
+ 
 
-  // Function to handle search input change
+ 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value.toLowerCase();
-    setSearchTerm(searchValue);
+    setSearchItem(searchValue);
 
-    // Filter items based on search term
-    const filtered = items.filter((item) =>
-     item.name.toLowerCase().includes(searchValue)      
+  }
+    
+    const filteredItems = props.games.filter((game) =>
+      game.title.toLowerCase().includes(searchItem)
     );
-    setFilteredItems(filtered);
-  };
-
+  
 
 
   return (
-    <Paper elevation={3} style={{ padding: '20px' }}>
-      {/* Search input */}
-      <TextField
-        
-        
+    <Paper elevation={3} style={{ padding: '20px' }}>     
+      <TextField                
         variant="outlined"
-        value={searchTerm}
+        value={searchItem}
         onChange={handleSearch}
         fullWidth
         style={{ marginBottom: '20px' }}
@@ -67,35 +42,31 @@ const SearchComponent: React.FC = () => {
               <img
                 src={searchicon }
                 alt="search"
-                style={{ width: '15px', height: '15px' }} // Adjust size here
+                style={{ width: '15px', height: '15px' }} 
               />
             </InputAdornment>
           ),
-        }}
-     
+        }}     
       />
 
-      {/* Filtered list */}
-      <Grid container spacing={2}>
-        {filteredItems.map((item, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card>
-              {/* Display image */}
+      
+      
+        {filteredItems.map((game) => (
+          <ListItem key={game.id}>
+            <Card>             
               <CardMedia
                 component="img"
                 height="140"
-                image={item.img}
-                alt={item.name}
+                image={game.image}
+                alt={game.title}
                 style={{ objectFit: 'cover' }}
-              />
-            
-          
+              />          
             </Card>
-          </Grid>
+          </ListItem >
         ))}
-      </Grid>
+      
     </Paper>
   );
 };
 
-export default SearchComponent;
+export default SearchTab;
