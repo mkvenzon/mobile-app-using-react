@@ -4,8 +4,6 @@ import Text from '../assets/text.png'
 
 import {Stack, styled } from '@mui/material'
 
-
-
 const StyledImg = styled('img')({
     width: '130%',
     height: 'auto',   
