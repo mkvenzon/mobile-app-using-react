@@ -18,7 +18,7 @@ const App = (): ReactElement => {
       <NavBar />
       <Slider />
       <Notification />
-      <TabMenu games={games} />  
+      <TabMenu games={games} setGames={setGames} />  
     </>
   );
 };

@@ -1,4 +1,4 @@
-import type { PropsWithChildren, ReactElement, SyntheticEvent } from "react";
+import type { Dispatch, PropsWithChildren, ReactElement, SetStateAction, SyntheticEvent } from "react";
 import { type Game } from "../mocks/fetchGames";
 import { useState } from "react";
 
@@ -22,6 +22,7 @@ import StartTab from './tabs/Start'
 
 interface TabMenuProps {
   games: Game[]
+  setGames: (games: Game[]) => void
 }
 
 interface TabPanelProps {
@@ -44,7 +45,7 @@ const TabPanel = ({
 const TabMenu = (props: TabMenuProps): ReactElement => {
   const tabs = [
     { label: "SEARCH", icon: <img src={Search} />, content: <SearchTab games={props.games} /> },
-    { label: "START", icon: <img src={Start} />, content: <StartTab games={props.games} /> },
+    { label: "START", icon: <img src={Start} />, content: <StartTab games={props.games} setGames={props.setGames} /> },
     { label: "NEW", icon: <img src={New} />, content: <h1>NEW</h1> },
     { label: "SLOTS", icon: <img src={Slots} />, content: <h1>SLOTS</h1> },
     { label: "LIVE", icon: <img src={Live} />, content: <h1>LIVE</h1> },
