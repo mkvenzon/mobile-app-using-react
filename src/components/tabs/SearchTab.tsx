@@ -55,7 +55,7 @@ const SearchComponent: React.FC = () => {
       {/* Search input */}
       <TextField
         
-        label="Search"
+        
         variant="outlined"
         value={searchTerm}
         onChange={handleSearch}
