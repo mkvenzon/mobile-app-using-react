@@ -1,10 +1,6 @@
 import { type ReactElement, useState } from 'react';
 import { TextField,  InputAdornment, ImageList, ImageListItem } from '@mui/material';
 
-
-
-
-
 import searchicon from '../../assets/search-icon.png'
 import { Game } from '../../mocks/fetchGames';
 
@@ -12,11 +8,8 @@ interface SearchTabProps {
   games: Game[]
 }
 
-
 const SearchTab = (props:SearchTabProps) : ReactElement => {
   const [searchItem, setSearchItem] = useState<string>(''); 
- 
-
  
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value.toLowerCase();
@@ -28,8 +21,6 @@ const SearchTab = (props:SearchTabProps) : ReactElement => {
       game.title.toLowerCase().includes(searchItem)
     );
   
-
-
   return (
    <>
       <TextField                
