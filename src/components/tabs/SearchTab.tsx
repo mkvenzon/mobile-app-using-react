@@ -1,9 +1,9 @@
 import { type ReactElement, useState } from 'react';
-import { TextField,  InputAdornment, ImageList, ImageListItem } from '@mui/material';
+import { TextField, InputAdornment, ImageList, ImageListItem } from '@mui/material';
 
-import searchicon from '../../assets/search-icon.png'
 import { Game } from '../../mocks/fetchGames';
 
+import searchicon from '../../assets/search-icon.png'
 import provider from '../../assets/provider-icon.png'
 
 interface SearchTabProps {

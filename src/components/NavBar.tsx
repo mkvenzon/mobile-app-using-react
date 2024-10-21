@@ -19,7 +19,8 @@ interface NavBarProps {
 
 const NavBar = (props: NavBarProps): ReactElement => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    
+    <Box sx={{ flexGrow: 1 }}>      
       <AppBar
         position="static"
         variant="elevation"

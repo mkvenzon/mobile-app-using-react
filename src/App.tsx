@@ -27,7 +27,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   color: '#ffffff'
 }));
 
-const ProviderWrapper = styled('div')(({theme}) => ({
+const ProviderWrapper = styled('div')(() => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -56,7 +56,7 @@ const App = (): ReactElement => {
       <Slider />
       <Notification />     
       <TabMenu games={games} setGames={setGames} />
-      <Footer games={games} setGames={setGames}  /> 
+      <Footer  /> 
       <Drawer
         anchor='bottom'
         open={isOpen}
