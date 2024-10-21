@@ -6,7 +6,7 @@ import Acc from '../assets/Acc.png'
 import Line from '../assets/Line.png'
 
 import Grid from '@mui/material/Grid2';
-import Banner from './Banner'
+import Slider from './Slider'
 
 const Header = () => {
   return (
@@ -21,9 +21,10 @@ const Header = () => {
                 <img src={Cart} />
                 <img src={Price} />
                 <img src={Line} />
-                <img src={Acc} />    
-              <Banner />
+        <img src={Acc} />   
         </Grid>
+              <Slider />
+       
     </div>
   )
 }
