@@ -37,7 +37,7 @@ const TabPanel = ({
 }: PropsWithChildren<TabPanelProps>): ReactElement => {
   return (
     <div role="tabpanel" hidden={value !== index}>
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+      {value === index && <Box sx={{ px: 3 }}>{children}</Box>}
     </div>
   );
 };

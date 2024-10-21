@@ -3,7 +3,7 @@ import { Stack } from '@mui/material'
 import text from '../assets/text.png'
 import bell from '../assets/bell.png'
 
-export const Notification = () => {
+const Notification = () => {
   return (
       <div>
           <Stack
@@ -18,3 +18,5 @@ export const Notification = () => {
      </div>
   )
 }
+
+export default Notification

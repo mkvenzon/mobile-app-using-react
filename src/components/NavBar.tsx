@@ -13,7 +13,11 @@ import Acc from "../assets/Acc.png";
 import Cart from "../assets/Cart.png";
 import Line from "../assets/Line.png";
 
-const NavBar = (): ReactElement => {
+interface NavBarProps {
+  setOpen: (flag: boolean) => void
+}
+
+const NavBar = (props: NavBarProps): ReactElement => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -23,7 +27,7 @@ const NavBar = (): ReactElement => {
         sx={{ paddingTop: 1, paddingBottom: 1 }}
       >
         <Toolbar>
-          <IconButton size="large" edge="start" color="inherit" sx={{ mr: 2 }}>
+          <IconButton size="large" edge="start" color="inherit" sx={{ mr: 2 }} onClick={() => props.setOpen(true)}>
             <img src={Vector} />
           </IconButton>
           <img src={Fun} />
