@@ -1,4 +1,5 @@
 import type { PropsWithChildren, ReactElement, SyntheticEvent } from "react";
+import { type Game } from "../mocks/fetchGames";
 import { useState } from "react";
 
 // import { styled } from "@mui/material";
@@ -15,6 +16,12 @@ import Jackpot from "../assets/jackpot-icon.png";
 import Table from "../assets/table-icon.png";
 import Bingo from "../assets/bingo-icon.png";
 import Others from "../assets/others-icon.png";
+
+import StartTab from './tabs/Start'
+
+interface TabMenuProps {
+  games: Game[]
+}
 
 interface TabPanelProps {
   index: number;
@@ -33,10 +40,10 @@ const TabPanel = ({
   );
 };
 
-const TabMenu = (): ReactElement => {
+const TabMenu = (props: TabMenuProps): ReactElement => {
   const tabs = [
     { label: "SEARCH", icon: <img src={Search} />, content: <h1>SEARCH</h1> },
-    { label: "START", icon: <img src={Start} />, content: <h1>START</h1> },
+    { label: "START", icon: <img src={Start} />, content: <StartTab games={props.games} /> },
     { label: "NEW", icon: <img src={New} />, content: <h1>NEW</h1> },
     { label: "SLOTS", icon: <img src={Slots} />, content: <h1>SLOTS</h1> },
     { label: "LIVE", icon: <img src={Live} />, content: <h1>LIVE</h1> },
