@@ -33,8 +33,7 @@ export const fetchGames = async (): Promise<Game[]> => {
                 { id: 9, title: "Beach Life", image: Beach, isFavorite: false, }, 
                 { id: 10, title: "Inca Jackpot", image: Inca, isFavorite: false, }, 
                 { id: 11, title: "Pride of Persia", image: Pride, isFavorite: false, }, 
-                { id: 12, title: "Azteca", image: Azteca, isFavorite: false, }, 
-                
+                { id: 12, title: "Azteca", image: Azteca, isFavorite: false, },                 
             ];
             resolve(games);
         }, 1000);
